@@ -1,0 +1,17 @@
+hello we are testing how we will be reading the words from a file. we are
+inserting multiple     spaces        
+as well as		  tabs
+
+
+and multiple enters
+
+
+
+to test its functionality.
+
+
+
+
+
+
+
