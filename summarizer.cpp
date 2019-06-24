@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <unordered_map>
 
 using namespace std;
 
@@ -11,6 +12,15 @@ using namespace std;
  */
 
 int main(int argc, char * argv[]){
+
+   // Map of stored words and their frequencies from file we are reading in
+   unordered_map<string, int> frequencies;
+
+   // Temporary vector to build up sentences of words we find.
+   vector<string> wordsSentences;
+
+   // Map of sentences stored in order based on their int value;
+   unordered_map<vector<string>, int> sentences;
 
 
 //   if(argc != 3){
@@ -60,6 +70,8 @@ int main(int argc, char * argv[]){
 	  unsigned int character;
 
 	  while( (character = file.get()) != EOF ){
+		 // Insert logic for gathering words, as well as logic for discerning
+		 // ends of sentences.
 		 if( (unsigned char)character == 'a' ){
 			continue;
 		 }
@@ -75,6 +87,11 @@ int main(int argc, char * argv[]){
 * 
 *  - Function to place every word in an unordered_map to keep track of word
 *  frequencies
+*	  - make everything lower case
+*  
+*  Prototype:
+*  unordered_map<string, int> getFrequencies(unordered_map<string, int>,
+*  string);
 * 
 *  - Function to separate all sentences of a file and place them in a set
 *	  - How to separate sentences? have cases when we encounter a character
@@ -87,5 +104,6 @@ int main(int argc, char * argv[]){
 *	  signify start of new sentences. But also need to account for factorial
 *	  numbers. (4!). Should functions work based on the fact that perfect
 *	  sentences may not be able to be extracted?
+*	  - 
 *
 */
